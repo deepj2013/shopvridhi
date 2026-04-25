@@ -1,0 +1,9 @@
+{
+  "name": "shopvridhi-windows-pos",
+  "private": true,
+  "version": "0.1.0",
+  "scripts": {
+    "dev": "echo \"Use Electron/Tauri runtime in next step\"",
+    "lint": "echo \"No linter configured yet\""
+  }
+}

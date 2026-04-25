@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ShopVridhi Login</title>
+  <link rel="stylesheet" href="./assets/styles.css" />
+</head>
+<body>
+  <header class="nav">
+    <div class="brand">ShopVridhi</div>
+    <div><a href="./index.html">Home</a></div>
+  </header>
+
+  <main class="container" style="max-width:520px;">
+    <section class="card">
+      <h2 class="section-title">Login</h2>
+      <p id="error" style="color:#fca5a5;"></p>
+      <form id="login-form">
+        <label>Email<input class="input" id="email" type="email" required /></label>
+        <label>Password<input class="input" id="password" type="password" required /></label>
+        <button class="btn btn-primary mt-2" type="submit">Sign In</button>
+      </form>
+      <p class="mt-3">Demo: owner@shopvridhi.com / pass123</p>
+    </section>
+  </main>
+
+  <script type="module" src="./js/auth.js"></script>
+</body>
+</html>

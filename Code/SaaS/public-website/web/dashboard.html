@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ShopVridhi Dashboard</title>
+  <link rel="stylesheet" href="./assets/styles.css" />
+</head>
+<body>
+  <header class="nav">
+    <div class="brand">ShopVridhi Dashboard</div>
+    <div><span id="user-name"></span> (<span id="user-role"></span>) <button id="logout" class="btn btn-secondary">Logout</button></div>
+  </header>
+
+  <main class="container">
+    <p id="status"></p>
+
+    <section class="grid grid-3">
+      <div class="card"><div>Total Inventory Items</div><div id="kpi-items" class="kpi">0</div></div>
+      <div class="card"><div>Total Orders</div><div id="kpi-orders" class="kpi">0</div></div>
+      <div class="card"><div>Low Stock Items</div><div id="kpi-low-stock" class="kpi">0</div></div>
+    </section>
+
+    <section class="card mt-3"><div class="row"><button class="btn btn-secondary" data-tab="inventory">Inventory</button><button class="btn btn-secondary" data-tab="ecommerce">E-commerce</button><button class="btn btn-secondary" data-tab="admin">Admin</button></div></section>
+
+    <section class="card mt-3" data-section="inventory" data-view="inventory">
+      <h3 class="section-title">Inventory Management</h3>
+      <form id="inventory-form" class="row">
+        <label>Name<input id="i-name" class="input" required /></label><label>SKU<input id="i-sku" class="input" required /></label><label>Barcode<input id="i-barcode" class="input" /></label><label>Category<input id="i-category" class="input" required /></label><label>Price<input id="i-price" class="input" type="number" min="0" required /></label><label>Stock<input id="i-stock" class="input" type="number" min="0" required /></label><label>Location<input id="i-location" class="input" placeholder="R1-S1-B1" /></label><label>Online Listing<input id="i-online" type="checkbox" /></label><div><button class="btn btn-primary" type="submit">Add Item</button></div>
+      </form>
+      <table><thead><tr><th>Name</th><th>SKU</th><th>Stock</th><th>Location</th><th>Online</th></tr></thead><tbody id="inventory-rows"></tbody></table>
+    </section>
+
+    <section class="card mt-3" data-section="ecommerce" data-view="ecommerce" style="display:none;">
+      <h3 class="section-title">E-commerce Catalog</h3>
+      <div id="product-list" class="grid grid-3"></div>
+      <div class="mt-2">Cart count: <span id="cart-count">0</span></div>
+      <button id="checkout" class="btn btn-primary mt-2">Create Demo Order</button>
+    </section>
+
+    <section class="card mt-3" data-section="admin" data-view="admin" style="display:none;">
+      <h3 class="section-title">Universal Admin Panel</h3>
+      <form id="tenant-form" class="row"><label>Tenant Name<input id="t-name" class="input" required /></label><label>Plan Code<input id="t-plan" class="input" placeholder="starter/growth/premium" /></label><div><button class="btn btn-primary" type="submit">Create Tenant</button></div></form>
+      <h4>Tenants</h4><table><thead><tr><th>Name</th><th>Status</th><th>Plan</th></tr></thead><tbody id="tenant-rows"></tbody></table>
+      <h4 class="mt-3">Users</h4><table><thead><tr><th>Name</th><th>Email</th><th>Role</th><th>Status</th></tr></thead><tbody id="user-rows"></tbody></table>
+      <h4 class="mt-3">Plans</h4><table><thead><tr><th>Code</th><th>Name</th><th>Monthly Price</th></tr></thead><tbody id="plan-rows"></tbody></table>
+    </section>
+  </main>
+
+  <script type="module" src="./js/dashboard.js"></script>
+</body>
+</html>

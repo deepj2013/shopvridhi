@@ -1,0 +1,7 @@
+{
+  "name": "dashboard",
+  "version": "v1",
+  "endpoints": [
+    {"path": "/api/v1/dashboard/summary", "method": "GET", "response": ["kpis"]}
+  ]
+}

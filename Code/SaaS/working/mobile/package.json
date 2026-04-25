@@ -1,0 +1,9 @@
+{
+  "name": "shopvridhi-mobile",
+  "private": true,
+  "version": "0.1.0",
+  "scripts": {
+    "dev": "echo \"Use Expo init/runtime in next step\"",
+    "lint": "echo \"No linter configured yet\""
+  }
+}

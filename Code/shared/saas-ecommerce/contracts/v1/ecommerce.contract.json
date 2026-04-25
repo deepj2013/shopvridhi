@@ -1,0 +1,8 @@
+{
+  "name": "ecommerce",
+  "version": "v1",
+  "endpoints": [
+    {"path": "/api/v1/ecommerce/products", "method": "GET", "response": ["products"]},
+    {"path": "/api/v1/ecommerce/orders", "method": "POST", "request": ["customerName", "customerPhone", "items"], "response": ["order"]}
+  ]
+}

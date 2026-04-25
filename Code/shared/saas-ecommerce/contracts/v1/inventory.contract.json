@@ -1,0 +1,8 @@
+{
+  "name": "inventory",
+  "version": "v1",
+  "endpoints": [
+    {"path": "/api/v1/inventory/items", "method": "GET", "response": ["items"]},
+    {"path": "/api/v1/inventory/items", "method": "POST", "request": ["name", "sku", "category", "price", "stock"], "response": ["item"]}
+  ]
+}
