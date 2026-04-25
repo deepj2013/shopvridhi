@@ -1,9 +1,0 @@
-{
-  "name": "auth",
-  "version": "v1",
-  "endpoints": [
-    {"path": "/api/v1/auth/login", "method": "POST", "request": ["email", "password"], "response": ["accessToken", "refreshToken", "user"]},
-    {"path": "/api/v1/auth/refresh", "method": "POST", "request": ["refreshToken"], "response": ["accessToken", "refreshToken"]},
-    {"path": "/api/v1/auth/logout", "method": "POST", "request": ["refreshToken"], "response": ["success"]}
-  ]
-}

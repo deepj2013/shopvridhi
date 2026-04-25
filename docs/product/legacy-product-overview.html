@@ -1,0 +1,281 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ShopVridhi - Complete Product Documentation</title>
+  <style>
+    :root {
+      --bg: #0b1020;
+      --panel: #121a33;
+      --card: #172244;
+      --text: #e9eefc;
+      --muted: #b4c1e8;
+      --accent: #58a6ff;
+      --ok: #3fb950;
+      --warn: #f2cc60;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: Inter, Segoe UI, Arial, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.5;
+    }
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(11, 16, 32, 0.95);
+      border-bottom: 1px solid #24345f;
+      padding: 12px 20px;
+      backdrop-filter: blur(4px);
+    }
+    .wrap {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+    h1, h2, h3 { margin-top: 0; }
+    h1 { font-size: 1.6rem; }
+    h2 {
+      margin-top: 26px;
+      font-size: 1.25rem;
+      border-left: 4px solid var(--accent);
+      padding-left: 10px;
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 12px;
+      margin: 10px 0;
+    }
+    .card {
+      background: var(--card);
+      border: 1px solid #28407d;
+      border-radius: 10px;
+      padding: 12px;
+    }
+    .muted { color: var(--muted); }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 10px 0 16px;
+      background: var(--panel);
+    }
+    th, td {
+      border: 1px solid #24345f;
+      padding: 8px;
+      text-align: left;
+      vertical-align: top;
+    }
+    th { background: #1d2a53; }
+    nav a {
+      color: var(--accent);
+      text-decoration: none;
+      margin-right: 12px;
+      font-size: 0.92rem;
+    }
+    .tag {
+      display: inline-block;
+      padding: 2px 8px;
+      border-radius: 999px;
+      margin: 2px;
+      font-size: 0.82rem;
+      background: #1d2a53;
+    }
+    .ok { color: var(--ok); }
+    .warn { color: var(--warn); }
+    ul { margin-top: 6px; }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="wrap">
+      <h1>ShopVridhi - Universal Retail Operating System</h1>
+      <nav>
+        <a href="#vision">Vision</a>
+        <a href="#mapping">Feature Mapping</a>
+        <a href="#roles">Roles</a>
+        <a href="#modules">Modules</a>
+        <a href="#architecture">Architecture</a>
+        <a href="#schema">Database</a>
+        <a href="#api">APIs</a>
+        <a href="#roadmap">Roadmap</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <section id="vision">
+      <h2>1) Product Vision & PRD</h2>
+      <p>ShopVridhi is an offline-first, multi-tenant SaaS platform built for all Indian retail formats. It unifies billing, inventory, GST, udhaar, CRM, WhatsApp engagement, and hyperlocal e-commerce in one modular system.</p>
+      <div class="grid">
+        <div class="card">
+          <h3>Key Principles</h3>
+          <ul>
+            <li>Offline-first with automatic sync</li>
+            <li>Ultra-fast billing and daily operations</li>
+            <li>Custom fields and modules per shop type</li>
+            <li>Marketplace-ready inventory from day one</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3>Business Outcomes</h3>
+          <ul>
+            <li>Faster billing and fewer stock errors</li>
+            <li>Better udhaar collections and supplier control</li>
+            <li>Higher retention via CRM and loyalty</li>
+            <li>New order channel through pincode discovery</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section id="mapping">
+      <h2>2) Feature Mapping vs Vyapar, OkCredit, Khatabook</h2>
+      <table>
+        <thead>
+          <tr><th>Capability</th><th>Vyapar</th><th>OkCredit</th><th>Khatabook</th><th>ShopVridhi</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Billing + GST</td><td>Yes</td><td>No</td><td>No</td><td class="ok">Yes + advanced compliance</td></tr>
+          <tr><td>Udhaar ease</td><td>Limited</td><td>Strong</td><td>Strong</td><td class="ok">Strong + reminders + analytics</td></tr>
+          <tr><td>Inventory location tracking</td><td>Basic</td><td>No</td><td>No</td><td class="ok">Rack/Shelf/Bin support</td></tr>
+          <tr><td>CRM + WhatsApp marketing</td><td>Basic</td><td>Limited</td><td>Limited</td><td class="ok">Advanced segmentation and campaigns</td></tr>
+          <tr><td>Hyperlocal commerce</td><td>No</td><td>No</td><td>No</td><td class="ok">Native pincode marketplace</td></tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section id="roles">
+      <h2>3) User Roles and Permissions</h2>
+      <div class="grid">
+        <div class="card"><strong>Shop Owner</strong><p class="muted">Full business, finance, settings, and subscription controls.</p></div>
+        <div class="card"><strong>Manager</strong><p class="muted">Day-to-day operations, reporting, inventory, team oversight.</p></div>
+        <div class="card"><strong>Cashier</strong><p class="muted">Billing, returns, customer handling, payment collection.</p></div>
+        <div class="card"><strong>Staff</strong><p class="muted">Stock inward/outward, location updates, basic catalog tasks.</p></div>
+        <div class="card"><strong>ShopVridhi Admin</strong><p class="muted">Tenant ops, support, plans, compliance and health monitoring.</p></div>
+        <div class="card"><strong>Customer / Delivery Partner</strong><p class="muted">Order placement/tracking and last-mile execution.</p></div>
+      </div>
+    </section>
+
+    <section id="modules">
+      <h2>4) Core Modules and Workflows</h2>
+      <div class="grid">
+        <article class="card">
+          <h3>POS Billing</h3>
+          <p>Barcode/search add -> discount -> split payments -> print/share invoice in seconds.</p>
+        </article>
+        <article class="card">
+          <h3>Item + Barcode</h3>
+          <p>Template-based item creation with tax class, custom fields, and barcode generation.</p>
+        </article>
+        <article class="card">
+          <h3>Inventory Location</h3>
+          <p>Track quantity by rack/shelf/bin with transfers, audits, and variance posting.</p>
+        </article>
+        <article class="card">
+          <h3>Purchase + Supplier</h3>
+          <p>PO -> GRN -> supplier invoice -> payable ledger with due tracking.</p>
+        </article>
+        <article class="card">
+          <h3>CRM + Loyalty</h3>
+          <p>Segment customers, run WhatsApp campaigns, reward repeat purchases.</p>
+        </article>
+        <article class="card">
+          <h3>Udhaar</h3>
+          <p>Auto ledger from invoices, reminders, and settlement tracking.</p>
+        </article>
+      </div>
+    </section>
+
+    <section>
+      <h2>5) Hyperlocal E-commerce Design</h2>
+      <ul>
+        <li>Inventory-driven catalog publishing from shop panel</li>
+        <li>Pincode-based customer discovery and shop ranking</li>
+        <li>Order routing with fallback on timeout/rejection</li>
+        <li>Delivery partner API for task assignment and tracking</li>
+      </ul>
+    </section>
+
+    <section id="architecture">
+      <h2>6) Offline-First Architecture & Sync</h2>
+      <p><span class="tag">PouchDB (Local)</span><span class="tag">CouchDB (Cloud)</span><span class="tag">Conflict Resolver</span><span class="tag">Event Queue</span></p>
+      <ul>
+        <li>All writes commit locally first; sync replicates in background.</li>
+        <li>Bi-directional replication filtered by tenant/shop.</li>
+        <li>Idempotent event processing to avoid duplicate financial entries.</li>
+        <li>UI always shows sync state: synced / pending / failed.</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>7) Recommended Tech Stack</h2>
+      <div class="grid">
+        <div class="card"><strong>Web/POS:</strong> MERN frontend with React + TypeScript</div>
+        <div class="card"><strong>Desktop:</strong> Electron (Windows-first)</div>
+        <div class="card"><strong>Mobile:</strong> React Native (Android-first)</div>
+        <div class="card"><strong>Sync:</strong> PouchDB/CouchDB replication</div>
+        <div class="card"><strong>Messaging:</strong> WhatsApp Business API</div>
+        <div class="card"><strong>Analytics:</strong> event pipeline + BI dashboards</div>
+      </div>
+    </section>
+
+    <section id="schema">
+      <h2>8) Database Schema (Collections)</h2>
+      <p class="muted">Tenant/access, catalog/inventory, billing/ledger, procurement, CRM, e-commerce, delivery, sync, and audit collections are included in full documentation.</p>
+      <table>
+        <thead><tr><th>Domain</th><th>Primary Collections</th></tr></thead>
+        <tbody>
+          <tr><td>Tenant</td><td>tenants, shops, users, role_permissions</td></tr>
+          <tr><td>Inventory</td><td>items, item_variants, stock_ledger, locations</td></tr>
+          <tr><td>Finance</td><td>invoices, invoice_lines, payments, udhaar_ledger</td></tr>
+          <tr><td>Procurement</td><td>suppliers, purchase_orders, grn_receipts</td></tr>
+          <tr><td>Growth</td><td>customers, campaigns, online_orders, delivery_tasks</td></tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section id="api">
+      <h2>9) API Structure & Endpoints</h2>
+      <p>Base: <code>/api/v1</code></p>
+      <ul>
+        <li><strong>Auth:</strong> login, refresh, logout</li>
+        <li><strong>POS:</strong> create invoice, refund, share</li>
+        <li><strong>Inventory:</strong> item CRUD, stock movements, stock query</li>
+        <li><strong>CRM/Ledger:</strong> customer ledger, payment post, campaign send</li>
+        <li><strong>Marketplace:</strong> pincode shops, order create/accept</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>10-18) UX, Admin, Security, Deployment, Onboarding, Metrics</h2>
+      <div class="grid">
+        <div class="card"><strong>Wireframes:</strong> Role-wise textual layouts for owner, manager, cashier, staff, customer, rider.</div>
+        <div class="card"><strong>UI/UX:</strong> Hindi-first labels, large touch targets, low-training flow design.</div>
+        <div class="card"><strong>Admin:</strong> Tenant health, plan controls, support and compliance.</div>
+        <div class="card"><strong>Security:</strong> JWT, tenant isolation, TLS, audit logs, backup and restore drills.</div>
+        <div class="card"><strong>Deployment:</strong> Containerized services, CDN frontend, queues, observability stack.</div>
+        <div class="card"><strong>Onboarding + Marketing:</strong> OTP signup, guided setup, website messaging, trial conversion hooks.</div>
+      </div>
+    </section>
+
+    <section id="roadmap">
+      <h2>19) Phase-wise MVP Roadmap</h2>
+      <table>
+        <thead><tr><th>Phase</th><th>Goal</th><th>Highlights</th></tr></thead>
+        <tbody>
+          <tr><td>Phase 1</td><td>Core operations</td><td>POS, inventory basics, udhaar, GST, offline desktop</td></tr>
+          <tr><td>Phase 2</td><td>Control and insight</td><td>Purchase, supplier ledger, advanced reports, role policies</td></tr>
+          <tr><td>Phase 3</td><td>Growth engine</td><td>WhatsApp campaigns, customer app, hyperlocal orders</td></tr>
+          <tr><td>Phase 4</td><td>Scale platform</td><td>Delivery ecosystem, extensibility, enterprise controls, AI insights</td></tr>
+        </tbody>
+      </table>
+      <p class="warn">For full operational details and developer specifications, refer to <code>docs/ShopVridhi_Complete_Documentation.md</code>.</p>
+    </section>
+  </main>
+</body>
+</html>
